@@ -15,14 +15,17 @@
                             </div>
                                 {# Lien vers la fiche de la série : #}
                             <div>
-                                <a href="{{ path("category_show", { categoryName: category.name }) }}">Voir la fiche</a>
+                                <a class="btn btn-outline-danger btn-sm" href="{{ path("category_show", { categoryName: category.name }) }}">Voir la fiche</a>
                             </div>
                         </li>
-                    {% else %}
+                        {% else %}
                         Aucune catégorie trouvée.
-                    {% endfor %}
-                </ul>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
+        <div>
+            <a class="btn btn-outline-primary btn-sm my-4" href="{{ path("category_new") }}">Créer une nouvelle catégorie</a>
         </div>
     </div>
 {% endblock %}

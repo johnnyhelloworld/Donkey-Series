@@ -2,19 +2,19 @@
 @import "~bootstrap/scss/bootstrap";
 
 // customize some Bootstrap variables
-$primary: #141422;
+$primary: #f8f9fa;
 $secondary: white;
 
 header {
     .navbar {
-        background-color: $primary;
+        background-color: $secondary;
     }
 
     a {
-        color: white;
+        color: $secondary;
     }
 }
 
 body {
-    background-color: $secondary;
+    background-color: $primary;
 }
