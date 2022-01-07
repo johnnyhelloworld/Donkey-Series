@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Episode #{{ episode.id }}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="my-5">Episode #{{ episode.id }}</h1>
+    <table class="table table-striped table-hover">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ episode.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ episode.title }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ episode.number }}</td>
+            </tr>
+            <tr>
+                <th>Résumé</th>
+                <td>{{ episode.sypnosis }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="btn-group">
+        <a class="btn btn-outline-primary" href="{{ path('episode_edit', {'id': episode.id}) }}">Éditer</a>  
+        {{ include('episode/_delete_form.html.twig') }}
+    </div>
+</div>
+{% endblock %}
