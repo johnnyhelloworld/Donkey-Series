@@ -8,24 +8,24 @@
         <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
         <ul class="list-group my-3">
             <li class="list-group-item">
-                <div>Titre de la série : {{ program.title}} </div>
+                <div>Program Title : {{ program.title}} </div>
             </li>
             <li class="list-group-item">
-                <div>N° de la saison : {{ season.number }} </div>
+                <div>Season Number : {{ season.number }} </div>
             </li>
             <li class="list-group-item">
-                <div>N° de l'épisode : {{ episode.number}} </div>
+                <div>Episode Number {{ episode.number}} </div>
             </li>
             <li class="list-group-item">
-                <div>Titre de l'épisode : {{ episode.title }} </div>
+                <div>Episode Title : {{ episode.title }} </div>
             </li>
             <li class="list-group-item">
-                <div>Résumé de l'épisode : {{ episode.sypnosis }} </div>
+                <div>Episode Synopsis : {{ episode.sypnosis }} </div>
             </li>
         </ul>
     </div>
-    <a class="btn btn-outline-primary" href="{{ path('program_index') }}">
-        Retour à la liste des programmes
+    <a class="btn btn-primary" href="{{ path('program_index') }}">
+        Back to the list of programs
     </a>
 </div>
 {% endblock %}

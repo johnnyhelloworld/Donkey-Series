@@ -1,22 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Saison #{{ season.id }}{% endblock %}
+{% block title %}Season #{{ season.id }}{% endblock %}
 
 {% block body %}
 <div class="container">
-    <h1 class="my-5">Saison #{{ season.id }}</h1>
+    <h1 class="my-5 text-center">Season #{{ season.id }}</h1>
     <table class="table table-striped table-hover">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>ID</th>
                 <td>{{ season.id }}</td>
             </tr>
             <tr>
-                <th>Nombre</th>
+                <th>Number</th>
                 <td>{{ season.number }}</td>
             </tr>
             <tr>
-                <th>Année</th>
+                <th>Year</th>
                 <td>{{ season.year }}</td>
             </tr>
             <tr>
@@ -26,7 +26,7 @@
         </tbody>
     </table>
     <div class="btn-group">
-        <a class="btn btn-outline-primary" href="{{ path('season_edit', {'id': season.id}) }}">Éditer</a>
+        <a class="btn btn-primary" href="{{ path('season_edit', {'id': season.id}) }}">Edit</a>
         {{ include('season/_delete_form.html.twig') }}
     </div>
 </div>

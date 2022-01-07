@@ -4,19 +4,19 @@
 
 {% block body %}
 <div class="container">
-    <h1 class="my-5 text-center">Toutes les séries : </h1>
+    <h1 class="my-5 text-center">All your programs : </h1>
     {% for program in programs %}
         <div class="mb-5">
             <h2>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
             <p>{{ program.summary }}</p>
             {# Lien vers la fiche de la série : #}
-            <a class="btn btn-danger" href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a>
+            <a class="btn btn-danger" href="{{ path("program_show", { id: program.id }) }}">Details</a>
         </div>
     {% else %}
         Aucune série trouvée.
     {% endfor %}
     <div>
-        <a class="btn btn-outline-primary my-4" href="{{ path("program_new") }}">Créer une nouvelle série</a>
+        <a class="btn btn-primary my-4" href="{{ path("program_new") }}">Create a new program</a>
     </div>
 </div>
 {% endblock %}
