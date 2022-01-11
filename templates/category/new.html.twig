@@ -1,15 +1,13 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-
-<div class="container">
-    <h1>Ajouter une nouvelle catégorie</h1>
+<div class="container my-3">
+    <h1 class="text-center">Create a new category</h1>
     <div class="row">
         {{ form_start(form) }}
         {{ form_widget(form) }}
+        <button class="btn btn-primary" type="submit" formnovalidate>Add category</button>
         {{ form_end(form) }}
     </div>
-    <button class="btn btn-outline-primary" type="submit">Ajouter catégorie</button>
 </div>
-
 {% endblock %}
