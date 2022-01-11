@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container my-3">
+    <h1 class="text-center">Edit a season</h1>
+    <div class="container">
+        {{ include('season/_form.html.twig', {'button_label': 'Edit'}) }}
+        {{ include('season/_delete_form.html.twig') }}
+    </div>
+</div>
+{% endblock %}

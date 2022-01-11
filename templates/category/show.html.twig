@@ -4,13 +4,13 @@
 
 {% block body %}
     <div class="container">
-        <h1 class="my-3">Toutes les séries de la catégorie {{ category.name }}:</h1>
-            <table class="table">
+        <h1 class="my-5 text-center">All programs in the category {{ category.name }} :</h1>
+            <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Titre</th>
-                        <th>Résumé</th>
+                        <th>Title</th>
+                        <th>Synopsis</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -20,15 +20,15 @@
                             <td>{{ program.id }}</td>
                             <td>{{ program.title }}</td>
                             <td>{{ program.summary }}</td>
-                            <td><a href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a></td>
+                            <td><a class="btn btn-danger" href="{{ path("program_show", { id: program.id }) }}">Details</a></td>
                         </tr>
                     {% else %}
                         Aucune série trouvée.
                     {% endfor %}
                 </tbody>
             </table>
-            <a href="{{ path('program_index') }}">
-              Retour à l'acceuil'
+            <a class="btn btn-primary" href="{{ path('program_index') }}">
+                Back to homepage
             </a>
     </div>
 {% endblock %}

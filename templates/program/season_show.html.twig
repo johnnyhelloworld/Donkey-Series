@@ -3,29 +3,30 @@
 {% block title %}{{ program.title }} {{ program.id}} {% endblock %}
 
 {% block body %}
-    <div class="container">
-        <table class="table">
-            <thead>
+<div class="container my-3">
+    <h1 class="my-5 text-center">All the episodes :</h1>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Title</th>
+                <th>Synopsis</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for episode in episodes %}
                 <tr>
-                    <th>Number</th>
-                    <th>Title</th>
-                    <th>Synopsis</th>
-                    <th>Actions</th>
+                    <td>{{ episode.number }}</td>
+                    <td>{{ episode.title }}</td>
+                    <td>{{ episode.sypnosis }}</td>
+                    <td><a class="btn btn-danger" href="{{ path("program_episode_show", { programId:program.id, seasonId:season.id, episodeId:episode.id }) }}">Détails</a></td>
                 </tr>
-            </thead>
-            <tbody>
-                {% for episode in episodes %}
-                    <tr>
-                        <td>{{ episode.number }}</td>
-                        <td>{{ episode.title }}</td>
-                        <td>{{ episode.sypnosis }}</td>
-                        <td><a href="{{ path("program_episode_show", { programId:program.id, seasonId:season.id, episodeId:episode.id }) }}">Détails</a></td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <a href="{{ path('program_index') }}">
-          Retour à la liste des programmes'
-        </a>
-    </div>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="{{ path('program_index') }}">
+        Back to the list of programs
+    </a>
+</div>
 {% endblock %}

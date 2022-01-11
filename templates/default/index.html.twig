@@ -1,5 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Bienvenue !</h1>
+    <section class="bg-light my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <h1>Welcome to Donkey Series ! </h1>
+                    <p class="lead">This is where our catchy phrase should come! Lorem Ipsum dolor sit amet. Lorem Ipsum dolor sit amet. </p>
+                    <p class="lead">Lorem Ipsum dolor sit amet. Lorem Ipsum dolor sit amet. </p>
+                    <p class="lead">Lorem Ipsum dolor sit amet. Lorem Ipsum dolor sit amet. </p>
+                    <p><a href="{{ path('program_index') }}" class="btn btn-primary shadow mr-2">Programs</a><a href="{{ path('category_index') }}" class="btn btn-outline-primary">Categories</a></p>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2"><img src="{{ asset('/images/series.png') }}" alt="landing image" class="img-fluid"></div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

@@ -3,28 +3,29 @@
 {% block title %}Episode #{{ program.id }}{% endblock %}
 
 {% block body %}
-    <div class="media">
+<div class="container my-3">
+    <div class="media text-center">
         <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
-        <ul>
-            <li>
-                <div>Titre de la série : {{ program.title}} </div>
+        <ul class="list-group my-3">
+            <li class="list-group-item">
+                <div>Program Title : {{ program.title}} </div>
             </li>
-            <li>
-                <div>N° de la saison : {{ season.number }} </div>
+            <li class="list-group-item">
+                <div>Season Number : {{ season.number }} </div>
             </li>
-            <li>
-                <div>N° de l'épisode : {{ episode.number}} </div>
+            <li class="list-group-item">
+                <div>Episode Number {{ episode.number}} </div>
             </li>
-            <li>
-                <div>Titre de l'épisode : {{ episode.title }} </div>
+            <li class="list-group-item">
+                <div>Episode Title : {{ episode.title }} </div>
             </li>
-            <li>
-                <div>Résumé de l'épisode : {{ episode.sypnosis }} </div>
+            <li class="list-group-item">
+                <div>Episode Synopsis : {{ episode.sypnosis }} </div>
             </li>
         </ul>
     </div>
-
-    <a href="{{ path('program_index') }}">
-        Retour à la liste des programmes
+    <a class="btn btn-primary" href="{{ path('program_index') }}">
+        Back to the list of programs
     </a>
+</div>
 {% endblock %}
