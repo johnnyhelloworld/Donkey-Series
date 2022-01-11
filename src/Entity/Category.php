@@ -6,6 +6,7 @@ use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 class Category
@@ -16,6 +17,8 @@ class Category
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: "Input cannot be empty")]
+    #[Assert\Length(max: 255, maxMessage:"The category name {{ value }} is too long, it cannot contain more than {{ limit }} caracters")]
     private $name;
 
     #[ORM\OneToMany(targetEntity: Program::class, mappedBy: 'category')]
